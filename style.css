@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+/***********************
+     GENERAL RULES 
+***********************/
+
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    
+
+}
+
+a.btn {
+    background-color: #0061ff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+a.btn:hover {
+    text-decoration: underline;
+}
+
+
+/***********************
+     SECTIONS RULES 
+***********************/
+
+
+header {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 2px 2px 5px #ddd;
+    font-family: "Space Grotesk", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#nav-left, .logo {
+    float: left;
+    
+}
+
+.logo img {
+    vertical-align: text-bottom;
+}
+
+#nav-right, #start {
+    float: right;
+}
+
+nav {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:hover {
+    color: #0061ff;
+}
+
