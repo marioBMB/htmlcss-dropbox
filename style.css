@@ -57,6 +57,16 @@ a.btn {
     margin: 10px 0;
 }
 
+.btn-minimal {
+    background-color: transparent !important;
+    color: black !important;
+    border: 1px solid black;
+}
+
+.btn-minimal:hover {
+    text-decoration: underline;   
+}
+
 a.btn:hover {
     text-decoration: underline;
 }
@@ -115,7 +125,7 @@ section h3 {
 }
 
 section h4 {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
@@ -294,12 +304,25 @@ section#jumbotron img {
 }
 
 
-/* margini interni per le sezioni interne a col */
-.spaced .col-body > div {
-    margin: 40px 0; /* se avessi definito il padding non ci sarebbe il collasso */
+.text {
+    margin-top: 30px;
 }
 
 
+
+
+/***************************************
+     ROWS AND COLUMS SECTION RELATED
+***************************************/
+
+
+
+/* margini interni per le sezioni interne a col */
+row.spaced .col-body > div {
+    margin: 40px 0; /* se avessi definito il padding non ci sarebbe il collasso */
+}
+
+/* regola generale per le colonne */
 *[class^='col-'] {
     display: inline-block;
     vertical-align: top; /* di default gli inline-block se non pieni si allineano verso il basso */
@@ -319,7 +342,7 @@ section#jumbotron img {
 }
 
 .col-40 {
-    background-color: yellow;
+    width: 37.5%;
 }
 
 .col-1-third {
@@ -351,8 +374,3 @@ section#jumbotron img {
     border: 1px solid #ccc;
     padding: 10px 30px;
 }
-
-
-
-
-
