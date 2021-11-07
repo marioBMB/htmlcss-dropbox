@@ -165,22 +165,22 @@ section {
 
 section h2 {
     font-size: 70px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 section h3 {
     font-size: 40px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 section h4 {
-    font-size: 28px;
-    padding-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 20px;
 }
 
 section h5 {
     font-size: 16px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 section p {
@@ -191,7 +191,7 @@ section p {
 }
 
 section .col {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 
@@ -246,16 +246,24 @@ section#jumbotron img {
     vertical-align: top;
 }
 
-.col-2-third {
-    width: 62%;
-    height: 200px;
-    background: yellow;
+/* gives internal margins only among cols of same type */
+.col-1-third + .col-1-third {
+    margin-left: calc(5% - 5px); /* -5px: removes default inline-block margins */
 }
 
-/* gives internal margins */
-.col-1-third:nth-of-type(-n+2){
-    margin-right: calc(5% - 5px); /* removes default inline-block margins */
+.col-2-third {
+    width: 63%;
+    height: 200px;
+    background: yellow;
+    display: inline-block;
 }
+
+.plan .col-2-third {
+    text-align: left;
+    padding: 40px;
+
+}
+
 
 
 .col-th, .col-body {
@@ -279,21 +287,29 @@ section#jumbotron img {
     padding: 0px;
 }
 
-.plan li, .plan-main-top-info li > h4 {
+.plan li {
     margin: 20px 0;
+}
+
+.plan-main-top-info {
+    margin-bottom: 40px;
+}
+
+.plan-main-bottom-info {
+    margin-top: 80px; /* ricorda: collasso dei margini */
 }
 
 
 /* h2-3-4-5-6, p and other text-block elements */
 .plan-main-top-info li > * {
-    padding: 0;
+    margin: 0;
 }
 
 .plan-main-top-info li {
     margin: 5px;
 }
 
-.plan .col-body {
+:not(.full).plan .col-body {
     min-height: 960px;
 }
 
@@ -302,6 +318,7 @@ section#jumbotron img {
 }
 
 
+/* linea di separazione tra main-info ed extra-info */
 .plan-main-info::after {
     content:"";
     display: block;
