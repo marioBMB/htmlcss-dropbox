@@ -65,10 +65,15 @@
                             <a href="" class="btn">
                                 Inizia la tua prova gratuita
                             </a>
+                            <p>Annulla in qualsiasi momento</p>
+
+                            <a class='next-section' href="#choose-plan">
+                                <i class="fa fa-arrow-down"></i>
+                            </a>
 
                         </div>
 
-                        <div class="col-right img outer">                            
+                        <div class="col-right img">                            
                             <img src="img/jumbo.png" alt="">
                         </div>
                     </div>
@@ -84,9 +89,10 @@
                     
                     <div id="choose-plan-top">
 
-                        <input id='monthly' type="radio">
+                        <!-- devono avere stesso nome o possono essere checkati entrambi -->
+                        <input name='billing' id='monthly' type="radio" checked>
                         <label for='monthly'>Fatturazione mensile</label>
-                        <input id='annual' type="radio">
+                        <input name='billing' id='annual' type="radio">
                         <label for='annual'>Fatturazione annuale</label>
                     </div>
 
@@ -130,14 +136,12 @@
                                       </ul>
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="col-1-third plan">
 
                             <div class="col-th user">
-                                <i class="far fa-user"></i>
-                                Singolo
+                                <i class="far fa-building"></i>
+                                Team
                             </div>
 
                             <div class='col-body'>
@@ -145,12 +149,12 @@
                                 <div class="plan-main-info">
 
                                     <ul class="plan-main-top-info">
-                                        <li><h4>Professional</h4></li>
+                                        <li><h4>Standard</h4></li>
                                         <li><h5>19,99 €</h5></li>
-                                        <li><p>/mese</p></li>
+                                        <li><p>/ utente /mese, a partire da 3 utenti</p></li>
                                     </ul>
                                     <ul class="plan-main-bottom-info fa-ul">
-                                        <li><i class='fa-li far fa-user'></i>1 utente</li>
+                                        <li><i class='fa-li fa fa-user-plus'></i>1 utente</li>
                                         <li><i class='fa-li far fa-folder'></i>3 TB di spazio di archiviazione sicuro</li>
                                         <li><i class='fa-li fas fa-pencil-alt'></i>Funzioni di produttività premium e condivisione file semplice e sicura</li>
                                     </ul>
@@ -168,6 +172,7 @@
                                         <li><i class="fa-li fa fa-check"></i>Pulizia remota dell'account</li>
                                         <li><i class="fa-li fa fa-check"></i>Filigrana documento</li>
                                         <li><i class="fa-li fa fa-check"></i>Assistenza prioritaria via email e chat</li>
+                                        <li><i class="fa-li fa fa-check"></i>Assistenza prioritaria via email e chat</li>
                                       </ul>
                                 </div>
                             </div>
@@ -177,8 +182,8 @@
                         <div class="col-1-third plan">
 
                             <div class="col-th user">
-                                <i class="far fa-user"></i>
-                                Singolo
+                                <i class="far fa-building"></i>
+                                Team
                             </div>
 
                             <div class='col-body'>
@@ -186,12 +191,12 @@
                                 <div class="plan-main-info">
 
                                     <ul class="plan-main-top-info">
-                                        <li><h4>Professional</h4></li>
+                                        <li><h4>Advanced</h4></li>
                                         <li><h5>19,99 €</h5></li>
-                                        <li><p>/mese</p></li>
+                                        <li><p>/ utente /mese, a partire da 3 utenti</p></li>
                                     </ul>
                                     <ul class="plan-main-bottom-info fa-ul">
-                                        <li><i class='fa-li far fa-user'></i>1 utente</li>
+                                        <li><i class='fa-li fa fa-user-plus'></i>1 utente</li>
                                         <li><i class='fa-li far fa-folder'></i>3 TB di spazio di archiviazione sicuro</li>
                                         <li><i class='fa-li fas fa-pencil-alt'></i>Funzioni di produttività premium e condivisione file semplice e sicura</li>
                                     </ul>
@@ -209,27 +214,24 @@
                                         <li><i class="fa-li fa fa-check"></i>Pulizia remota dell'account</li>
                                         <li><i class="fa-li fa fa-check"></i>Filigrana documento</li>
                                         <li><i class="fa-li fa fa-check"></i>Assistenza prioritaria via email e chat</li>
+                                        <li><i class="fa-li fa fa-check"></i>Assistenza prioritaria via email e chat</li>
                                       </ul>
                                 </div>
                             </div>
 
-
                         </div>
 
+                        <div class='col full plan'>
+                            <div class="col-th team">
+                                Team
+                            </div>
 
+                            <div class="col-2-third">
 
-
-
-
-
-
-                        <div class="col-third">
-                            <div class="user-team team"></div>
-                        </div>
-                        <div class="col-third">
-                            <div class="user-team team"></div>
+                            </div>
                         </div>
                     </div>
+
 
                 </div>
             </section>

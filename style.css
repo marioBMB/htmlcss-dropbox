@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500&display=swap');
 
+
 /***********************
      GENERAL RULES 
 ***********************/
@@ -12,11 +13,36 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 14px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 500;
 
+}
+
+.container-center {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.row::after, .clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.full {
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: #0789f3;
+    font-weight: 600;
 }
 
 a.btn {
@@ -25,10 +51,7 @@ a.btn {
     text-decoration: none;
     padding: 10px 20px;
     display: inline-block;
-}
-
-header a.btn {
-    display: inline;
+    margin: 10px 0;
 }
 
 a.btn:hover {
@@ -36,14 +59,21 @@ a.btn:hover {
 }
 
 a.btn.full {
-    width: 100%;
-    text-align: center;
     margin: 20px 0;
 }
 
-.container-center {
-    width: 70%;
-    margin: 0 auto;
+a.next-section i {
+    font-size: 40px;
+    color: #081753;
+}
+
+a.next-section:hover {
+    opacity: 0.5;
+
+}
+
+.title {
+    margin: auto;
 }
 
 label {
@@ -54,6 +84,7 @@ label {
 
 input[type='radio'] {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 i[class^="fa"]{
@@ -78,6 +109,11 @@ header {
     box-shadow: 2px 1px 2px #ddd;
     border-bottom: 1px solid #ddd;
     z-index: 999;
+}
+
+header a.btn {
+    display: inline;
+    margin: 0;
 }
 
 #nav-left, .logo {
@@ -110,10 +146,15 @@ header {
 #main-nav li a {
     text-decoration: none;
     color: black;
+    font-weight: 500;
+    display: block;
+    height: 70px;
 }
 
 #main-nav li a:hover {
     color: #0061ff;
+    border-bottom: 2px solid #014bc4;
+    /* padding: 0 2px; */  /* dà un effetto movimento */
 }
 
 
@@ -144,10 +185,15 @@ section h5 {
 
 section p {
     font-size: 14px;
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
     line-height: 1.6;
     font-size: 14px;
 }
+
+section .col {
+    margin-top: 20px;
+}
+
 
 section#jumbotron {
     background-color: #b4d0e7;
@@ -163,16 +209,8 @@ section#jumbotron h2 {
     padding: 0;
 }
 
-
-.title {
-    margin: auto;
-}
-
-
-.row::after {
-    content: "";
-    display: table;
-    clear: both;
+section#jumbotron img {
+    width: 100%;
 }
 
 #jumbotron .col-left  {
@@ -190,16 +228,10 @@ section#jumbotron h2 {
     top: 80px;
 }
 
-section.outer + section::before {
+.outer::after {
     content: "";
-    height: 160px;
     display: block;
-}
-
-
-section#jumbotron img {
-    width: 100%;
-    object-fit: contain;
+    margin-bottom: 160px;
 }
 
 
@@ -208,12 +240,21 @@ section#jumbotron img {
 }
 
 .col-1-third {
-    width: 31%;
+    width: calc((100% - 10%) / 3);
+    min-width: 300px;
     display: inline-block;
+    vertical-align: top;
 }
 
+.col-2-third {
+    width: 62%;
+    height: 200px;
+    background: yellow;
+}
+
+/* gives internal margins */
 .col-1-third:nth-of-type(-n+2){
-    margin-right: 3.1%;
+    margin-right: calc(5% - 5px); /* removes default inline-block margins */
 }
 
 
@@ -225,6 +266,12 @@ section#jumbotron img {
 
 .col-th {
     text-align: center;
+    width: 100%;
+}
+
+.plan {
+    height: 1000px;
+    display: inline-block;
 }
 
 .plan-main-info ul {
@@ -246,6 +293,9 @@ section#jumbotron img {
     margin: 5px;
 }
 
+.plan .col-body {
+    min-height: 960px;
+}
 
 .plan .col-body > div {
     padding: 30px 0;
@@ -262,3 +312,4 @@ section#jumbotron img {
 .plan-extra-info li i {
     color: #0061ff;
 }
+
