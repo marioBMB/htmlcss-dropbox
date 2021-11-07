@@ -24,6 +24,10 @@ body {
 
 }
 
+* > img {
+    width: 100%;
+}
+
 .container-center {
     width: 70%;
     margin: 0 auto;
@@ -94,6 +98,49 @@ i[class^="fa"]{
      SECTIONS RULES 
 ***********************/
 
+section {
+    padding-top: 80px;
+    font-family: Arial;
+}
+
+section h2 {
+    font-size: 70px;
+    margin-bottom: 40px;
+}
+
+
+section h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+section h4 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+section h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+section .col, section .row {
+    margin-top: 40px;
+}
+
+section.outer::after {
+    content: "";
+    display: block;
+    margin-bottom: 160px;
+}
+
 
 header {
     display: block;
@@ -117,7 +164,6 @@ header a.btn {
 
 #nav-left, .logo {
     float: left;
-    
 }
 
 .logo img {
@@ -157,44 +203,6 @@ header a.btn {
 }
 
 
-section {
-    padding-top: 80px;
-    font-family: Arial;
-}
-
-section h2 {
-    font-size: 70px;
-    margin-bottom: 40px;
-}
-
-
-section h3 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-section h4 {
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-
-section h5 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-section p {
-    font-size: 14px;
-    margin: 0 0 20px 0;
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-section .col, section .row {
-    margin-top: 40px;
-}
-
-
 section#jumbotron {
     background-color: #b4d0e7;
     position: relative;
@@ -228,81 +236,27 @@ section#jumbotron img {
     top: 80px;
 }
 
-.outer::after {
-    content: "";
-    display: block;
-    margin-bottom: 160px;
+
+#plan .row.spaced .col-body {
+    min-height: 960px; /* stessa altezza per le 3 colonne */
+    display: inline-block;
 }
 
+#plan .col-2-third {
+    text-align: left;
+    margin: 20px 0;
+}
 
 .plans-wrapper {
     margin-top: 40px;
 }
 
-.col-1-third {
-    width: calc((100% - 10%) / 3);
-    min-width: 250px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-/* gives internal margins only among cols of same type */
-.col-1-third + .col-1-third {
-    margin-left: calc(5% - 5px); /* -5px: removes default inline-block margins */
-}
-
-
-.col-2-third {
-    width: 65%;
-    display: inline-block;
-}
-
-.col-2-third + .col-1-third {
-    margin-left: 2.5%;
-}
-
-.plan .col-2-third {
-    text-align: left;
-    margin: 20px 0;
-}
-
-
-.col-th, .col-body {
-    display: block;
-    border: 1px solid #ccc;
-    padding: 10px 30px;
-}
-
-.full .col-body {
-    padding: 30px;
-}
-
-.full .plan *[class^='.col-'] {
-    margin: 0;
-}
-
-.full .btn {
-    margin-top: 0 !important;
-}
-
-.col-th {
-    text-align: center;
-    width: 100%;
-}
-
-.plan {
-    height: 1000px;
-    display: inline-block;
-}
 
 .plan-main-info ul {
     list-style: none;
     padding: 0px;
 }
 
-.plan li {
-    margin: 20px 0;
-}
 
 .plan-main-top-info {
     margin-bottom: 40px;
@@ -312,6 +266,23 @@ section#jumbotron img {
     margin-top: 80px; /* ricorda: collasso dei margini */
 }
 
+/* linea di separazione tra main-info ed extra-info */
+.plan-main-info::after {
+    content:"";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 20%;
+    margin-top: 30px; /* ricorda il collasso dei margini: definendolo qui lo definiamo per tutto */
+}
+
+.plan-extra-info li i {
+    color: #0061ff;
+}
+
+
+#plan li {
+    margin: 20px 0;
+}
 
 /* h2-3-4-5-6, p and other text-block elements */
 .plan-main-top-info li > * {
@@ -322,24 +293,66 @@ section#jumbotron img {
     margin: 5px;
 }
 
-:not(.row).plan .col-body {
-    min-height: 960px;
-}
 
 /* margini interni per le sezioni interne a col */
-:not(.row).plan .col-body > div {
-    margin: 30px 0; /* se avessi definito il padding non ci sarebbe il collasso */
+.spaced .col-body > div {
+    margin: 40px 0; /* se avessi definito il padding non ci sarebbe il collasso */
 }
 
-/* linea di separazione tra main-info ed extra-info */
-.plan-main-info::after {
-    content:"";
+
+*[class^='col-'] {
+    display: inline-block;
+    vertical-align: top; /* di default gli inline-block se non pieni si allineano verso il basso */
+}
+
+.col-mid {
+    width: 45%;
+}
+
+.col-60 {
+    width: 57.5%;
+}
+
+.col-60 + *[class^='col-'] {
+    width: 37.5% !important;
+    margin-left: 4.6%;
+}
+
+.col-40 {
+    background-color: yellow;
+}
+
+.col-1-third {
+    width: calc((100% - 10%) / 3);
+    min-width: 250px;
+}
+
+/* gives internal margins only among cols of same type */
+.col-1-third + .col-1-third {
+    margin-left: calc(5% - 5px); /* -5px: removes default inline-block margins */
+}
+
+
+.col-2-third {
+    width: 65%;
+}
+
+.col-2-third + .col-1-third {
+    margin-left: 2.5%;
+}
+
+.col-th {
+    text-align: center;
+    width: 100%;
+}
+
+.col-th, .col-body {
     display: block;
-    border-bottom: 1px solid #ccc;
-    width: 20%;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
 }
 
-.plan-extra-info li i {
-    color: #0061ff;
-}
+
+
+
 
