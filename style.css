@@ -48,23 +48,31 @@ a {
     color: #0789f3;
 }
 
+a.subtitle {
+    font-size: 18px;
+}
+
 a.btn {
-    background-color: #0061ff;
-    color: white;
     text-decoration: none;
     padding: 10px 20px;
     display: inline-block;
     margin: 10px 0;
 }
 
-.btn-minimal {
-    background-color: transparent !important;
-    color: black !important;
-    border: 1px solid black;
+.btn-skyblue {
+    background-color: #0061ff;
+    color: white;
 }
 
-.btn-minimal:hover {
-    text-decoration: underline;   
+.btn-white {
+    background-color: white;
+    color: black;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
 }
 
 a.btn:hover {
@@ -373,4 +381,18 @@ row.spaced .col-body > div {
     display: block;
     border: 1px solid #ccc;
     padding: 10px 30px;
+}
+
+
+figcaption {
+    margin-top: 10px;
+}
+
+
+.double-mtop {
+    margin-top: 160px;
+}
+
+.multiline {
+    width: 50%;
 }
