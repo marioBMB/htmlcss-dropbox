@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500&display=swap');
+
 /***********************
      GENERAL RULES 
 ***********************/
@@ -11,8 +13,9 @@
 }
 
 body {
-    font-size: 16px;
-    
+    font-size: 14px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 500;
 
 }
 
@@ -21,12 +24,41 @@ a.btn {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
+    display: inline-block;
+}
+
+header a.btn {
+    display: inline;
 }
 
 a.btn:hover {
     text-decoration: underline;
 }
 
+a.btn.full {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container-center {
+    width: 70%;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+input[type='radio'] {
+    margin-left: 10px;
+}
+
+i[class^="fa"]{
+    margin-right: 8px;
+}
 
 /***********************
      SECTIONS RULES 
@@ -43,10 +75,9 @@ header {
     line-height: 70px;
     padding: 0 20px;
     background-color: white;
-    box-shadow: 2px 2px 5px #ddd;
-    font-family: "Space Grotesk", Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    box-shadow: 2px 1px 2px #ddd;
+    border-bottom: 1px solid #ddd;
+    z-index: 999;
 }
 
 #nav-left, .logo {
@@ -55,33 +86,179 @@ header {
 }
 
 .logo img {
-    vertical-align: text-bottom;
+    vertical-align: middle;
 }
 
 #nav-right, #start {
     float: right;
 }
 
-nav {
+#main-nav {
     display: block;
 }
 
-nav ul {
+#main-nav ul {
     list-style: none;
     padding: 0 30px;
 }
 
-nav ul li {
+#main-nav ul li {
     display: inline-block;
     margin: 0 10px;
 }
 
-nav li a {
+#main-nav li a {
     text-decoration: none;
     color: black;
 }
 
-nav li a:hover {
+#main-nav li a:hover {
     color: #0061ff;
 }
 
+
+section {
+    padding-top: 80px;
+    font-family: Arial;
+}
+
+section h2 {
+    font-size: 70px;
+    padding-bottom: 40px;
+}
+
+section h3 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+section h4 {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+section h5 {
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 14px;
+    margin: 0 0 40px 0;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+section#jumbotron {
+    background-color: #b4d0e7;
+    position: relative;
+    top: 70px;
+}
+
+section#jumbotron .container-center {
+    width: 80%;
+}
+
+section#jumbotron h2 {
+    padding: 0;
+}
+
+
+.title {
+    margin: auto;
+}
+
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#jumbotron .col-left  {
+    float: left;
+    width: 30%;
+}
+
+#jumbotron .col-right  {
+    float: right;
+    width: 65%;
+}
+
+#jumbotron .row {
+    position: relative;
+    top: 80px;
+}
+
+section.outer + section::before {
+    content: "";
+    height: 160px;
+    display: block;
+}
+
+
+section#jumbotron img {
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.plans-wrapper {
+    margin-top: 40px;
+}
+
+.col-1-third {
+    width: 31%;
+    display: inline-block;
+}
+
+.col-1-third:nth-of-type(-n+2){
+    margin-right: 3.1%;
+}
+
+
+.col-th, .col-body {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+}
+
+.col-th {
+    text-align: center;
+}
+
+.plan-main-info ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.plan li, .plan-main-top-info li > h4 {
+    margin: 20px 0;
+}
+
+
+/* h2-3-4-5-6, p and other text-block elements */
+.plan-main-top-info li > * {
+    padding: 0;
+}
+
+.plan-main-top-info li {
+    margin: 5px;
+}
+
+
+.plan .col-body > div {
+    padding: 30px 0;
+}
+
+
+.plan-main-info::after {
+    content:"";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 20%;
+}
+
+.plan-extra-info li i {
+    color: #0061ff;
+}
