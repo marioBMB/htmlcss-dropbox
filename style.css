@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500&display=swap');
 
 
+--root {
+    --gutter: 30px;
+}
+
 /***********************
      GENERAL RULES 
 ***********************/
@@ -33,6 +37,14 @@ body {
     margin: 0 auto;
 }
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 .clearfix::after {
     content: "";
     display: table;
@@ -42,6 +54,10 @@ body {
 .full {
     width: 100%;
     text-align: center;
+}
+
+.double-mtop {
+    margin-top: 160px;
 }
 
 a {
@@ -67,6 +83,7 @@ a.btn {
 .btn-white {
     background-color: white;
     color: black;
+    box-shadow: 1px 3px 20px #bbb;
 }
 
 .btn-transparent {
@@ -96,6 +113,16 @@ a.next-section:hover {
 .title {
     text-align: center;
 }
+
+
+.text {
+    margin-top: 30px;
+}
+
+figcaption {
+    margin-top: 10px;
+}
+
 
 label {
     font-size: 16px;
@@ -239,13 +266,12 @@ section#jumbotron img {
     width: 100%;
 }
 
-#jumbotron .col-left  {
-    float: left;
+
+#jumbotron .col.left  {
     width: 30%;
 }
 
-#jumbotron .col-right  {
-    float: right;
+#jumbotron .col.right  {
     width: 65%;
 }
 
@@ -255,12 +281,12 @@ section#jumbotron img {
 }
 
 
-#plan .row.spaced .col-body {
+#plan .row.spaced:first-of-type .col-body {
     min-height: 960px; /* stessa altezza per le 3 colonne */
     display: inline-block;
 }
 
-#plan .col-2-third {
+#plan .col.w-2-third {
     text-align: left;
     margin: 20px 0;
 }
@@ -312,8 +338,95 @@ section#jumbotron img {
 }
 
 
-.text {
-    margin-top: 30px;
+.square {
+    width: 50%;
+    padding-bottom: 50%; /* gives height equal to width 50% */
+    height: 0;
+}
+
+.positioned {
+    position: relative;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.positioned > div {
+    position: absolute;
+}
+
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+
+.logo-img {
+    position: relative;
+}
+
+.logo-img img {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+#customers-main {
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+#designit {
+    background-color: #a2d39b;
+    border: 10px solid rgba(253, 253, 253, 0.5);
+}
+
+
+
+#asu {
+    background-color: #61082b;
+}
+
+
+#uf {
+    background-color: #0093ce;
+}
+
+#topps {
+    background-color: #ff1c1c;
+}
+
+#wbr {
+    background-color: #d5001f;
+}
+
+#hearst-corp {
+    background-color: #b4d0e7;
+}
+
+#lonely-planet {
+    background-color: #0d2481;
+}
+
+#clear-channel {
+    background-color: #ffd830;
 }
 
 
@@ -331,46 +444,74 @@ row.spaced .col-body > div {
 }
 
 /* regola generale per le colonne */
-*[class^='col-'] {
+.col {
     display: inline-block;
     vertical-align: top; /* di default gli inline-block se non pieni si allineano verso il basso */
+    margin-right: -5px;
 }
 
-.col-mid {
-    width: 45%;
+
+.w-30 {
+    width: 30%;
 }
 
-.col-60 {
-    width: 57.5%;
+.w-1-third {
+    width: calc(100% / 3);
 }
 
-.col-60 + *[class^='col-'] {
-    width: 37.5% !important;
-    margin-left: 4.6%;
+.w-40 {
+    width: 40%;
 }
 
-.col-40 {
-    width: 37.5%;
+.w-50 {
+    width: 50%;
 }
 
-.col-1-third {
+.w-60 {
+    width: 60%;
+}
+
+.w-2-third {
+    width: calc(100% / 3 * 2);
+}
+
+.w-viewport {
+    width: 100vw;
+}
+
+
+.spaced .w-1-third {
     width: calc((100% - 10%) / 3);
     min-width: 250px;
 }
 
 /* gives internal margins only among cols of same type */
-.col-1-third + .col-1-third {
+.spaced .w-1-third + .w-1-third {
     margin-left: calc(5% - 5px); /* -5px: removes default inline-block margins */
 }
 
+.spaced .w-40 {
+    width: 37.5%;
+}
 
-.col-2-third {
+.spaced .w-60 {
+    width: 57.5%;
+}
+
+.spaced .w-60 + .col {
+    width: 37.5% !important;
+    margin-left: 4.6%;
+}
+
+.w-2-third {
     width: 65%;
 }
 
-.col-2-third + .col-1-third {
+.w-2-third + .w-1-third {
     margin-left: 2.5%;
 }
+
+
 
 .col-th {
     text-align: center;
@@ -384,15 +525,6 @@ row.spaced .col-body > div {
 }
 
 
-figcaption {
-    margin-top: 10px;
-}
 
 
-.double-mtop {
-    margin-top: 160px;
-}
 
-.multiline {
-    width: 50%;
-}
