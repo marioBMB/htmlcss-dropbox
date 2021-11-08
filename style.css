@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 --root {
     --gutter: 30px;
@@ -23,9 +24,9 @@ html {
 
 body {
     font-size: 14px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
     font-weight: 500;
-
 }
 
 * > img {
@@ -49,6 +50,10 @@ body {
     content: "";
     display: table;
     clear: both;
+}
+
+.clearfix.outer::after {
+    margin-bottom: 160px;
 }
 
 .full {
@@ -131,7 +136,6 @@ figcaption {
 label {
     font-size: 16px;
     cursor: pointer;
-    font-family: Arial;
 }
 
 input[type='radio'] {
@@ -143,14 +147,22 @@ i[class^="fa"]{
     margin-right: 8px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
 
-h2 { font-size: 70px; margin-bottom: 40px; }
+h2 { font-size: 74px; margin-bottom: 40px; }
 
 h3 { font-size: 40px; margin-bottom: 20px; }
 
-h4 { font-size: 24px; margin-bottom: 20px; }
+h4 { font-size: 22px; margin-bottom: 20px; }
 
 h5 { font-size: 16px; margin-bottom: 10px; }
+
+
+.desc {
+    color: #aaa;
+}
 
 
 /***********************
@@ -159,7 +171,7 @@ h5 { font-size: 16px; margin-bottom: 10px; }
 
 section, footer {
     padding-top: 80px;
-    font-family: Arial;
+    margin-top: 80px;
 }
 
 
@@ -175,11 +187,6 @@ section .col, section .row {
     margin-top: 40px;
 }
 
-section.outer::after {
-    content: "";
-    display: block;
-    margin-bottom: 160px;
-}
 
 
 header {
@@ -254,11 +261,15 @@ section#jumbotron .container-center {
 }
 
 section#jumbotron h2 {
-    padding: 0;
+    margin: 0;
 }
 
 section#jumbotron img {
     width: 100%;
+}
+
+section#jumbotron p {
+    font-size: 16px;
 }
 
 
@@ -271,6 +282,7 @@ section#jumbotron img {
 }
 
 #jumbotron .row {
+    margin: 0;
     position: relative;
     top: 80px;
 }
@@ -306,7 +318,7 @@ section#jumbotron img {
 }
 
 /* linea di separazione tra main-info ed extra-info */
-.plan-main-info::after, #footer-bottom::before {
+.plan-main-info::after {
     content:"";
     display: block;
     border-bottom: 1px solid #ccc;
@@ -337,13 +349,16 @@ section#jumbotron img {
     width: 50%;
     padding-bottom: 50%; /* gives height equal to width 50% */
     height: 0;
+    display: inline-block;
+    margin-right: -5px; /* removes inline-block margins */
+    margin-bottom: -5px;
+    position: relative;
 }
 
 .positioned {
     position: relative;
     margin: 0 !important;
     padding: 0;
-    height: 432px;
 }
 
 .positioned div {
@@ -381,6 +396,7 @@ section#jumbotron img {
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
+    filter: invert(1);
 }
 
 #customers-main {
@@ -502,7 +518,6 @@ row.spaced .col-body > div {
 
 .spaced .w-20 {
     width: calc((100% - 10%) / 5);
-    background: red;
 }
 
 /* gives internal margins only among cols of same type */
@@ -604,8 +619,8 @@ row.spaced .col-body > div {
 
 footer {
     background-color: black;
-    height: 500px;
     margin-top: 160px;
+    padding: 60px;
 }
 
 footer .col-th {
@@ -614,23 +629,32 @@ footer .col-th {
 
 #footer-top {
     color: white;
-    margin: 60px 0;
+    padding: 60px 0 120px 0;
 }
 
 
-#footer-top::after {
-
-}
 
 #footer-bottom {
+    border-top: 1px solid #ccc;
+    padding: 40px 30px 0 0;
+    display: inline-block;
+    font-size: 12px;
     color: #5e5e5e;
-    padding-top: 60px;
+}
+
+#footer-bottom i {
+    margin-right: 3px;
+}
+
+#footer-bottom i.fas.fa-globe-americas {
+    color: #aaa;
+    font-size: 16px;
 }
 
 
 
 footer .container-center {
-    width: 80%;
+    width: 85%;
 }
 
 footer ul {
@@ -643,7 +667,7 @@ footer ul li {
     margin-bottom: 10px;
 }
 
-footer li a{
+footer li a {
     color: white;
     text-decoration: none;
 }
