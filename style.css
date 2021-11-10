@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
     /* font-family: 'M PLUS Rounded 1c', sans-serif; */
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
@@ -223,6 +223,8 @@ header a.btn {
 
 #main-nav {
     display: block;
+    margin: 0 auto;
+    /* max-width: 1200px */ /* reduces distance from left part to right one */
 }
 
 #main-nav ul {
@@ -346,13 +348,16 @@ section#jumbotron p {
 
 
 .square {
-    width: 50%;
-    padding-bottom: 50%; /* gives height equal to width 50% */
     height: 0;
     display: inline-block;
     margin-right: -5px; /* removes inline-block margins */
     margin-bottom: -5px;
     position: relative;
+}
+
+.square.w-50 {
+    width: 50%;
+    padding-bottom: 50%; /*gives height equal to width 50%*/
 }
 
 .positioned {
@@ -399,14 +404,13 @@ section#jumbotron p {
     filter: invert(1);
 }
 
-#customers-main {
-    display: block;
-}
 
 #customers-top {
-    margin-bottom: 40px;
 }
 
+#customers-main {
+    background-color: 
+}
 
 #customers-bottom {
     background-color: #b4d0e7;
@@ -510,6 +514,10 @@ row.spaced .col-body > div {
     width: calc(100% / 3 * 2);
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .w-viewport {
     width: 100vw;
 }
@@ -528,6 +536,7 @@ row.spaced .col-body > div {
 .spaced .w-1-third {
     width: calc((100% - 10%) / 3);
     min-width: 250px;
+    font-size: 14px;
 }
 
 /* gives internal margins only among cols of same type */
