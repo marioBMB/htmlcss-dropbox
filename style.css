@@ -102,7 +102,7 @@ a.btn {
 }
 
 a.btn:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 a.btn.full {
@@ -220,7 +220,7 @@ header a.btn {
     margin: 0;
 }
 
-.logo {
+.logo, #nav-left {
     float: left;
 }
 
@@ -228,12 +228,11 @@ header a.btn {
     vertical-align: middle;
 }
 
-#start {
+#start, #nav-right {
     float: right;
 }
 
 #main-nav {
-    display: inline-block;
     margin: 0 auto;
     /* max-width: 1200px */ /* reduces distance from left part to right one */
 }
@@ -243,11 +242,6 @@ header a.btn {
     line-height: 70px;
     height: 100%;
     margin: 0 auto;
-}
-
-#nav-left {
-}
-#nav-right {
 }
 
 #main-nav ul {
