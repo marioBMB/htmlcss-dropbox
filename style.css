@@ -259,14 +259,51 @@ header a.btn {
     color: black;
     font-weight: 500;
     display: block;
-    height: 70px;
 }
 
-#main-nav li a:hover {
+#main-nav li:hover {
     color: #0061ff;
     border-bottom: 2px solid #014bc4;
     /* padding: 0 2px; */  /* dà un effetto movimento */
 }
+
+.dropdown-content li:hover {
+    border-bottom: none !important;
+    display: inline;
+}
+
+.dropdown-content li:hover {
+    background-color: #ebebeb;
+}
+
+#main-nav ul li.dropdown {
+    position: relative;
+}
+
+#main-nav ul.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    background-color: #fff;
+    width: max-content;
+    cursor:pointer;
+    padding: 0;
+}
+
+.dropdown-content li {
+    display: block !important;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 0 !important;
+}
+
+#main-nav li.dropdown:hover ul.dropdown-content {
+    display: block;
+}
+
+
 
 
 section#jumbotron {
