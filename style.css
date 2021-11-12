@@ -516,12 +516,15 @@ img.svg-white {
 }
 
 
-#designit {
-    background-color: #a2d39b;
-    border: 10px solid rgba(253, 253, 253, 0.5);
+.logo-block.active, .logo-block:hover {
     padding-bottom: calc(50% - 20px);
+    border: 10px solid rgba(253, 253, 253, 0.5);
+    cursor: pointer;
 }
 
+#designit {
+    background-color: #a2d39b;
+}
 
 #asu {
     background-color: #61082b;
